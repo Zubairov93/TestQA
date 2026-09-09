@@ -1,0 +1,11 @@
+[33mcommit f3ea5e9b70a23798bad07c3d7e725cead7ff2a4b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mfeature/cinescope-tests-pr[m[33m)[m
+Author: Diba <diba_2012@mail.ru>
+Date:   Sat Sep 5 00:01:52 2026 +0300
+
+    Clear main branch for PR
+
+[33mcommit 57dcc09d7aae114b4d994d430ea1d5791184fad4[m[33m ([m[1;31morigin/feature/cinescope-tests[m[33m, [m[1;32mfeature/cinescope-tests[m[33m)[m
+Author: Diba <diba_2012@mail.ru>
+Date:   Fri Sep 4 23:46:50 2026 +0300
+
+    Init project with Gradle and JUnit 5
