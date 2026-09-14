@@ -1,6 +1,7 @@
-package com.example.testqa;
+package com.example.testqa.tests;
 
 
+import com.example.testqa.CinescopeService;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
