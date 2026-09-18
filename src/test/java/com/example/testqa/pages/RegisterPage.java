@@ -6,13 +6,17 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegisterPage {
 
     private final SelenideElement heading = $("h2");
-    private final SelenideElement loginInput = $("input[name = 'login'}");
+    private final SelenideElement loginInput = $("input[name='login']");
     private final SelenideElement emailInput = $("input[name='email']");
-    private final SelenideElement passwordInput = $("input[name = 'password']");
+    private final SelenideElement passwordInput = $("input[name ='password']");
+
+    private final SelenideElement registerButton = $("button[type='submit']");
+
 
     public SelenideElement heading() {
         return heading;
     }
+
 
     public SelenideElement loginInput() {
         return loginInput;
@@ -24,5 +28,9 @@ public class RegisterPage {
 
     public SelenideElement passwordInput() {
         return passwordInput;
+    }
+
+    public SelenideElement registerButton() {
+        return registerButton;
     }
 }

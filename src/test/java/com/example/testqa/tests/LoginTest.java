@@ -4,15 +4,15 @@ import com.example.testqa.pages.LoginPage;
 import com.example.testqa.pages.RegisterPage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import com.codeborne.selenide.WebDriverRunner;
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.url;
 import com.codeborne.selenide.Configuration;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.codeborne.selenide.Condition.*;
+
 
 
 public class LoginTest {
-    private final LoginPage loginpage = new LoginPage();
+    private final LoginPage loginPage = new LoginPage();
 
     @BeforeAll
     static void setUp(){
@@ -20,21 +20,22 @@ public class LoginTest {
     }
 
     @Test
-    void loginFormInvisible() {
-        loginpage.openPage();
-
-        loginpage.loginInput().shouldBe(visible);
-        loginpage.passwordInput().shouldBe(visible);
-        loginpage.submitButton().shouldBe(visible);
-        loginpage.registrationLink().shouldBe(visible);
-
+    void loginFormIsVisible() {
+        loginPage.openPage();
+        loginPage.loginInput().shouldBe(visible);
+        loginPage.passwordInput().shouldBe(visible);
+        loginPage.submitButton().shouldBe(visible).shouldHave(exactText("Войти"));
+        loginPage.registrationLink().shouldBe(visible).shouldHave(exactText("Зарегистрироваться"));
     }
     @Test
     void userCanOpenRegistration() {
-        RegisterPage registerPage = loginpage.openPage().openRegistration();
+        RegisterPage registerPage = loginPage.openPage().openRegistration();
 
-        assertTrue(WebDriverRunner.url().endsWith("/register"));
-        registerPage.heading().shouldHave(text("Регистрация"));
+        webdriver().shouldHave(url(Configuration.baseUrl +"/register"));
+        registerPage.heading().shouldBe(visible).shouldHave(exactText("Регистрация"));
+        registerPage.loginInput().shouldBe(visible);
+        registerPage.emailInput().shouldBe(visible);
+        registerPage.passwordInput().shouldBe(visible);
+        registerPage.registerButton().shouldBe(visible);
     }
-
 }
