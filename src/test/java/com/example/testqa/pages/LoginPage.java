@@ -1,8 +1,8 @@
 package com.example.testqa.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,7 +15,7 @@ public class LoginPage {
      private final SelenideElement registrationLink = $("a[href='/register']");
 
     public RegisterPage openRegistration() {
-        open("/register");
+        registrationLink.shouldBe(Condition.visible).click();
         return new RegisterPage();
     }
      public LoginPage openPage(){

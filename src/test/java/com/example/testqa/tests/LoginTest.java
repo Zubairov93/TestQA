@@ -22,6 +22,7 @@ public class LoginTest {
     @Test
     void loginFormIsVisible() {
         loginPage.openPage();
+        loginPage.heading().shouldBe(visible).shouldHave(exactText("Вход"));
         loginPage.loginInput().shouldBe(visible);
         loginPage.passwordInput().shouldBe(visible);
         loginPage.submitButton().shouldBe(visible).shouldHave(exactText("Войти"));
