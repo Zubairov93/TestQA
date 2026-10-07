@@ -4,5 +4,9 @@
 
 JDK: 17 
 
-### Запуск
-./gradlew test` (или `gradlew.bat test` на Windows)
+### Инструкция по запуску
+Для запуска тестов локально выполните команду:
+.\gradlew.bat test
+
+### Результат сборки
+BUILD SUCCESSFUL
